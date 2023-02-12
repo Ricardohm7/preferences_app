@@ -12,19 +12,23 @@ class SideMenu extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.pages_outlined),
           title: const Text('Home'),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushReplacementNamed(context, SettingsScreen.routerName);
+          },
         ),
         ListTile(
           leading: const Icon(Icons.people_outline_outlined),
           title: const Text('People'),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushReplacementNamed(context, SettingsScreen.routerName);
+          },
         ),
         ListTile(
           leading: const Icon(Icons.settings_outlined),
           title: const Text('Settings'),
           onTap: () {
-            Navigator.pop(context);
-            Navigator.pushNamed(context, SettingsScreen.routerName);
+            // Navigator.pop(context); //close side menu
+            Navigator.pushReplacementNamed(context, SettingsScreen.routerName);
           },
         ),
       ]),
