@@ -5,6 +5,7 @@ import 'package:preferences_app/share_preferences/preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.init();
+  // await Preferences.clean();
 
   runApp(const MyApp());
 }
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routerName: (_) => const HomeScreen(),
         SettingsScreen.routerName: (_) => const SettingsScreen()
       },
-      theme: ThemeData.light(),
+      theme: Preferences.isDarkMode ? ThemeData.dark() : ThemeData.light(),
     );
   }
 }
